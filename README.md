@@ -95,8 +95,8 @@ If the API fails to fetch a quote (due to network issues or API downtime), the a
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/atk2045/GrindRelax.git
-   cd GrindRelax
+   git clone https://github.com/atk2045/__GrindRelax.git
+   cd __GrindRelax
 
 2. **Install Dependencies**
 
