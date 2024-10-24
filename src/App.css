@@ -1,0 +1,285 @@
+/* General body and layout settings */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* App container */
+.App {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Main header (Pomodoro Clock title) */
+h1 {
+  font-size: 90px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* Add emoji to title */
+h1::before {
+  content: "⏳ ";
+  font-size: 90px;
+  margin-right: 10px;
+}
+
+h1::after {
+  content: " 🎯";
+  font-size: 90px;
+  margin-left: 10px;
+}
+
+/* Study subject input styling */
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-top: 120px; /* Adjust margin to move input lower */
+  margin-bottom: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+/* Work Time or Break Time text */
+h2 {
+  font-size: 55px;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: -30px; /* Reduced space */
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Timer and buttons in one row */
+.timer-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Timer display */
+.timer {
+  font-size: 70px;
+  color: #ff6b6b;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+  margin-bottom: -40px; /* Reduced space */
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  background-color: #f0f0f0;
+  margin: 5px 0; /* Uniform margins between buttons */
+}
+
+/* Hover effect on all buttons */
+button:hover {
+  transform: scale(1.05);
+  background-color: #ddd;
+  color: #333;
+}
+
+/* Start/Pause button specific hover */
+button.pause {
+  background-color: #28a745;
+  color: white;
+}
+
+button.pause:hover {
+  background-color: #1aa839;
+}
+
+/* Reset button specific hover */
+button.reset {
+  background-color: #ffb703;
+}
+
+button.reset:hover {
+  background-color: #e09b03;
+}
+
+/* Finish Session button specific hover */
+button.finish {
+  background-color: #ff4d4d;
+}
+
+button.finish:hover {
+  background-color: #e03c3c;
+}
+
+/* Music toggle button */
+button.music {
+  background-color: #6a5acd;
+  color: white;
+}
+
+button.music:hover {
+  background-color: #5a4ac1;
+}
+
+/* Start button specific hover effect */
+button:nth-child(4):hover {  
+  background-color: green;
+  color: white;
+}
+
+/* Reset button specific hover effect */
+button:nth-child(5):hover {  
+  background-color: orange;
+  color: white;
+}
+
+/* Finish Session button specific hover effect */
+button:nth-child(6):hover {  
+  background-color: red;
+  color: white;
+}
+
+/* Music button specific hover effect */
+button:nth-child(7):hover {
+  background-color: #6a5acd;
+  color: white;
+}
+
+/* Motivational quote container */
+.quote-container {
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  min-height: 60px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Modal overlay for session complete alerts */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  text-align: center;
+}
+
+/* Modal close button */
+.modal button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal button:hover {
+  background-color: #0056b3;
+}
+
+/* Summary container styling */
+.summary {
+  text-align: center;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 40px auto; /* Center the summary on the page */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Styling for the Session Complete heading */
+.summary h2 {
+  font-size: 40px; /* Slightly larger */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px; /* Add space below the heading */
+}
+
+/* Styling for the session details */
+.summary p {
+  font-size: 18px;
+  color: #555;
+  margin: 10px 0; /* Add space between the paragraphs */
+}
+
+/* Styling for the buttons */
+.summary button {
+  padding: 10px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #f0f0f0;
+  margin: 10px 10px; /* Space between buttons */
+}
+
+/* Hover effect for summary buttons */
+.summary button:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
+/* Adjust the display of buttons */
+.summary .session-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
