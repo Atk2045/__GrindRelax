@@ -18,7 +18,7 @@ const getRandomInt = (max) => {
 // used arrow function for clearer (anonymous function)
 // Main component for the Pomodoro Clock application
 const App = () => {
-  const [sec, setSec] = useState(10); // 25 minutes for study session
+  const [sec, setSec] = useState(1500); // 25 minutes for study session
   const [inUsage, setInUsage] = useState(false); // Timer active when the user starts it
   const [isBreak, setIsBreak] = useState(false); // Break time when the session ends
   const [motivQuote, setMotivQuote] = useState(''); // motivational quote generated for the user
@@ -244,25 +244,28 @@ const App = () => {
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
+    // clicking will enable file download now
     link.href = url;
+    // download process and cleaning after download
     link.setAttribute('download', 'pomodoro_sessions.csv');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  // Format time display (MM:SS)
+  // Function to format and display the time as minutes and seconds
   const formatTime = () => {
-    //
+    // conversions from seconds to minutes taking place
     const minutes = Math.floor(sec / 60);
     const remainderSeconds = sec % 60;
     return `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
   };
+// This part I asked for the help of the LLM to create an overall structure so I can then change accordingly
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
       <h1>Pomodoro Clock</h1>
-      
+{/* feature showing the timer and buttons when session running */}
       {!sessionDone && (
         <>
           <div>
@@ -277,22 +280,27 @@ const App = () => {
           </div>
 
           <div className="timer">
+            {/* the timer display showing the two available options */}
             <h2>{isBreak ? 'Break Time' : 'Work Time'}</h2>
             <p>{formatTime()}</p>
           </div>
+          {/* Start/Pause, Reset, and Finish Session created here*/}
           <button onClick={toggleTimer}>{inUsage ? 'Pause' : 'Start'}</button>
           <button onClick={resetTimer}>Reset</button>
           <button onClick={finishSession}>Finish Session</button>
 
-          {/* Toggle Music Button */}
+          {/*Music Button which enables and disables*/}
           <button onClick={toggleMusic}>{musicPlaying ? 'Disable Music' : 'Enable Ambient Music'}</button>
 
+
+          {/* motivational quote effects */}
           {motivQuote && (
             <div className={`quote-container ${quoteDiff ? 'fade-in' : 'fade-out'}`}>
               <p>{motivQuote}</p>
             </div>
           )}
 
+          {/* session and break end pop-ups for user*/}
           {showModal && (
             <>
               <div className="modal-overlay" onClick={closeModal}></div>
@@ -304,7 +312,7 @@ const App = () => {
           )}
         </>
       )}
-
+      {/* Session CSV feature and download button */}
       {sessionDone && (
         <div className="summary">
           <h2>Session Complete</h2>
@@ -319,7 +327,7 @@ const App = () => {
       </div>
       )}
 
-      {/* Audio element for ambient music */}
+      {/* Audio loop during study session and error message */}
       <audio ref={audioRef} loop>
         <source src="/ambient_music.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.

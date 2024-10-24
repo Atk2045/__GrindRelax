@@ -1,4 +1,6 @@
-/* General body and layout settings */
+/* A css template was first generated using an LLM then I edited the code to cater for the user and be more appealing */
+
+/* body and layout */
 body, html {
   margin: 0;
   padding: 0;
@@ -10,7 +12,7 @@ body, html {
   height: 100vh;
 }
 
-/* App container */
+/* the container that hold the app */
 .App {
   text-align: center;
   background-color: #fff;
@@ -21,7 +23,7 @@ body, html {
   width: 100%;
 }
 
-/* Main header (Pomodoro Clock title) */
+/* Main Title up pomodoro clock */
 h1 {
   font-size: 90px;
   font-weight: bold;
@@ -36,7 +38,7 @@ h1 {
   width: 100%;
 }
 
-/* Add emoji to title */
+/* Add emojis added to title to look better */
 h1::before {
   content: "⏳ ";
   font-size: 90px;
@@ -49,36 +51,36 @@ h1::after {
   margin-left: 10px;
 }
 
-/* Study subject input styling */
+/* The css of the study subject uinput by the user */
 input {
   padding: 10px;
   font-size: 16px;
   border: 2px solid #ccc;
   border-radius: 5px;
-  margin-top: 120px; /* Adjust margin to move input lower */
+  margin-top: 120px; 
   margin-bottom: 20px;
   width: 300px;
   text-align: center;
 }
 
-/* Work Time or Break Time text */
+/* The state text which shows work or break time */
 h2 {
   font-size: 55px;
   color: #333;
   margin-top: 0;
-  margin-bottom: -30px; /* Reduced space */
+  margin-bottom: -30px;
   font-weight: bold;
   text-align: center;
 }
 
-/* Timer and buttons in one row */
+/* Timer buttons all adjusted in a row */
 .timer-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Timer display */
+/* The contdown timer displayed */
 .timer {
   font-size: 70px;
   color: #ff6b6b;
@@ -88,7 +90,7 @@ h2 {
   margin-bottom: -40px; /* Reduced space */
 }
 
-/* Button styling */
+/* All Button styling with all showing the same shapes */
 button {
   padding: 10px 20px;
   font-size: 20px;
@@ -98,17 +100,17 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
   background-color: #f0f0f0;
-  margin: 5px 0; /* Uniform margins between buttons */
+  margin: 5px 0; 
 }
 
-/* Hover effect on all buttons */
+/* Created hoover effects to change colour upon cursor click */
 button:hover {
   transform: scale(1.05);
   background-color: #ddd;
   color: #333;
 }
 
-/* Start/Pause button specific hover */
+/* specific hoovers for each button */
 button.pause {
   background-color: #28a745;
   color: white;
@@ -118,7 +120,7 @@ button.pause:hover {
   background-color: #1aa839;
 }
 
-/* Reset button specific hover */
+
 button.reset {
   background-color: #ffb703;
 }
@@ -127,7 +129,6 @@ button.reset:hover {
   background-color: #e09b03;
 }
 
-/* Finish Session button specific hover */
 button.finish {
   background-color: #ff4d4d;
 }
@@ -136,7 +137,7 @@ button.finish:hover {
   background-color: #e03c3c;
 }
 
-/* Music toggle button */
+
 button.music {
   background-color: #6a5acd;
   color: white;
@@ -146,31 +147,27 @@ button.music:hover {
   background-color: #5a4ac1;
 }
 
-/* Start button specific hover effect */
 button:nth-child(4):hover {  
   background-color: green;
   color: white;
 }
 
-/* Reset button specific hover effect */
 button:nth-child(5):hover {  
   background-color: orange;
   color: white;
 }
 
-/* Finish Session button specific hover effect */
 button:nth-child(6):hover {  
   background-color: red;
   color: white;
 }
 
-/* Music button specific hover effect */
 button:nth-child(7):hover {
   background-color: #6a5acd;
   color: white;
 }
 
-/* Motivational quote container */
+/* The container holding Motivational quotes */
 .quote-container {
   margin-top: 10px;
   padding: 15px;
@@ -189,7 +186,7 @@ button:nth-child(7):hover {
   font-weight: bold;
 }
 
-/* Modal overlay for session complete alerts */
+/* Modal message overlays the  session for alerts */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -200,7 +197,7 @@ button:nth-child(7):hover {
   z-index: 1000;
 }
 
-/* Modal content */
+/* content inside modal */
 .modal {
   position: fixed;
   top: 50%;
@@ -214,7 +211,7 @@ button:nth-child(7):hover {
   text-align: center;
 }
 
-/* Modal close button */
+/* Modal close button  to be clicked by the user*/
 .modal button {
   padding: 10px 20px;
   font-size: 16px;
@@ -230,7 +227,7 @@ button:nth-child(7):hover {
   background-color: #0056b3;
 }
 
-/* Summary container styling */
+/* styling the Summary container */
 .summary {
   text-align: center;
   padding: 30px;
@@ -238,26 +235,26 @@ button:nth-child(7):hover {
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   max-width: 600px;
-  margin: 40px auto; /* Center the summary on the page */
+  margin: 40px auto; 
   font-family: 'Arial', sans-serif;
 }
 
-/* Styling for the Session Complete heading */
+/* session complete css style */
 .summary h2 {
-  font-size: 40px; /* Slightly larger */
+  font-size: 40px; 
   font-weight: bold;
   color: #333;
-  margin-bottom: 20px; /* Add space below the heading */
+  margin-bottom: 20px; 
 }
 
-/* Styling for the session details */
+/* session styling */
 .summary p {
   font-size: 18px;
   color: #555;
-  margin: 10px 0; /* Add space between the paragraphs */
+  margin: 10px 0; 
 }
 
-/* Styling for the buttons */
+/* styling of the buttons used by the user  */
 .summary button {
   padding: 10px 25px;
   font-size: 18px;
@@ -267,16 +264,15 @@ button:nth-child(7):hover {
   cursor: pointer;
   transition: background-color 0.3s ease;
   background-color: #f0f0f0;
-  margin: 10px 10px; /* Space between buttons */
+  margin: 10px 10px; 
 }
 
-/* Hover effect for summary buttons */
 .summary button:hover {
   background-color: #ddd;
   color: #333;
 }
 
-/* Adjust the display of buttons */
+/* display for the buttons adjusted  */
 .summary .session-buttons {
   display: flex;
   justify-content: center;
